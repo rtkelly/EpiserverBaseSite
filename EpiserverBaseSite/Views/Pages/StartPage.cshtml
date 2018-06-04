@@ -1,0 +1,12 @@
+﻿@using EpiserverBaseSite.Models.Pages
+@using EpiserverBaseSite.Models.ViewModels
+
+@model  StartPageViewModel
+
+@{
+    Layout = "~/Views/Shared/Master/_layout.cshtml";
+}
+
+this is the start page
+
+@Html.PropertyFor(x => x.CurrentPage.Content)
