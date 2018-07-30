@@ -1,0 +1,13 @@
+﻿
+@using EPiServer.Web.Mvc.Html
+
+@{
+    Layout = "~/Views/Shared/Master/_PreviewLayout.cshtml";
+}
+
+@model EPiServer.Core.BlockData
+
+@if (Model != null)
+{
+    { Html.RenderContentData(Model, false); }
+}

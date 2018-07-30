@@ -1,5 +1,4 @@
-﻿@using EpiserverBaseSite.Models.Pages
-@using EpiserverBaseSite.Models.ViewModels
+﻿@using EpiserverBaseSite.Models.ViewModels
 
 @model  StartPageViewModel
 
@@ -9,4 +8,15 @@
 
 this is the start page
 
-@Html.PropertyFor(x => x.CurrentPage.Content)
+@Html.PropertyFor(x => x.CurrentPage.Hero, new
+{
+    CustomTag = "ul",
+    CssClass = "list",
+    ChildrenCustomTagName = "li",
+    ChildrenCssClass = "list_item"
+})
+
+@Html.PropertyFor(x => x.CurrentPage.MainContent)
+
+
+@Html.PropertyFor(x => x.CurrentPage.FeaturedPages, new { Tag = "HomeFeatured" })

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languages>
+  <language name="English" id="en">
+    <contenttypes>
+      <startpage>
+        <name>Start Page</name>
+        <description>The home page of the website</description>
+      </startpage>
+     
+       <standardpage>
+        <name>Standard Page</name>
+        <description>The standard content page</description>
+      </standardpage>
+     
+      <imagefile>
+        <name>Image</name>
+        <description>Used for image files (BMP, GIF, ICO, JPEG, PNG)</description>
+      </imagefile>
+      <videofile>
+        <name>Video</name>
+        <description>Used for video files (FLV, MP4, WEBM)</description>
+      </videofile>
+      <documentfile>
+        <name>Document</name>
+        <description>Used for document files (PDF, Doc, Docx)</description>
+      </documentfile>
+    </contenttypes>
+  </language>
+</languages>

@@ -3,8 +3,9 @@ using EPiServer.Core;
 using EPiServer.ServiceLocation;
 using EPiServer.SpecializedProperties;
 using EPiServer.Web.Routing;
-using EpiserverBaseSite.Business.Models;
-using EpiserverBaseSite.Business.Models.Views;
+using EpiserverBaseSite.Business.Models.PartialViews;
+using EpiserverBaseSite.Models.Abstract;
+using EpiserverBaseSite.Models.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,12 +13,12 @@ using System.Web;
 
 namespace EpiserverBaseSite.Business.Extensions
 {
-  
+
     public static class ContentExtensions
     {
         private static readonly Injected<IContentLoader> _contentLoader;
         private static readonly Injected<UrlResolver> _urlResolver;
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -39,12 +40,12 @@ namespace EpiserverBaseSite.Business.Extensions
         /// <returns></returns>
         public static string GetContentUrl(this IContent content)
         {
-            return (content == null) ? string.Empty : 
+            return (content == null) ? string.Empty :
                 _urlResolver.Service.GetUrl(content.ContentLink);
 
 
         }
-        
+
         /// <summary>
         /// 
         /// </summary>
@@ -106,7 +107,7 @@ namespace EpiserverBaseSite.Business.Extensions
         /// </summary>
         /// <param name="pageData"></param>
         /// <returns></returns>
-        public static LinkView GetPageLink(this PageData pageData)
+        public static LinkView GetPageLink(this BasePage pageData)
         {
             if (pageData == null)
                 return null;
@@ -136,18 +137,54 @@ namespace EpiserverBaseSite.Business.Extensions
         /// </summary>
         /// <param name="contentData"></param>
         /// <returns></returns>
-        public static string GetTitle(this PageData contentData)
+        public static string GetTitle(this BasePage page)
         {
-            string pageTitle = "";
 
-            if (contentData is ISitePage)
-            {
-                pageTitle = ((ISitePage)contentData).PageTitle;
-            }
+            return (!page.DisplayTitle.IsNullOrEmpty()) ? page.DisplayTitle : page.Name;
+        }
 
-            return (!pageTitle.IsNullOrEmpty()) ? pageTitle : contentData.Name;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="page"></param>
+        /// <returns></returns>
+        public static string GetTitle(this BaseMedia page)
+        {
+
+            return (!page.DisplayTitle.IsNullOrEmpty()) ? page.DisplayTitle : page.Name;
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="basePage"></param>
+        /// <param name="defaultText"></param>
+        /// <returns></returns>
+        public static LinkViewModel GetLinkView(this BasePage basePage, string defaultText = null)
+        {
+            return new LinkViewModel()
+            {
+                Title = defaultText.IsNullOrEmpty() ? basePage.GetTitle() : defaultText,
+                Url = basePage.GetContentUrl(),
+                Target = basePage.GetPageLinkTarget()
+            };
+        }
+
+
+        public static TeaserViewModel GetTeaser(this BasePage currentPage)
+        {
+            return new TeaserViewModel()
+            {
+                Title = currentPage.GetTitle(),
+                Url = currentPage.GetLinkView(),
+                Summary = currentPage.Summary,
+                //Image = currentPage.PageImage.
+
+            };
+
+
+        }
     }
+ 
 }

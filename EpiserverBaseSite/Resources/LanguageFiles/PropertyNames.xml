@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<languages>
+  <language name="English" id="en">
+    <contenttypes>
+      <icontentdata>
+        <properties>
+          <!-- SitePageData -->
+          <disableindexing>
+            <caption>Disable indexing</caption>
+            <help>Prevents the page from being indexed by search engines</help>
+          </disableindexing>
+          <metadescription>
+            <caption>Page Description</caption>
+            <help>Used as the meta description and commonly as an ingress</help>
+          </metadescription>
+          <metakeywords>
+            <caption>Keywords</caption>
+          </metakeywords>
+          <metatitle>
+            <caption>Title</caption>
+          </metatitle>
+          <teasertext>
+            <caption>Teaser text</caption>
+            <help>Can be used to display a text other than the description when the page is dropped in a content area</help>
+          </teasertext>
+          <pageimage>
+            <caption>Teaser image</caption>
+            <help>An image used in different contexts, for example when the page is dropped in a content area</help>
+          </pageimage>
+          <hidesiteheader>
+            <caption>Hide site header</caption>
+            <help>Check this setting to hide the header including the main navigation</help>
+          </hidesiteheader>
+          <hidesitefooter>
+            <caption>Hide site footer</caption>
+            <help>Check this setting to hide the footer</help>
+          </hidesitefooter>
+          <!-- Common properties-->
+          <mainbody>
+            <caption>Main body</caption>
+            <help>Main editorial content of the page</help>
+          </mainbody>
+          <maincontentarea>
+            <caption>Large content area</caption>
+          </maincontentarea>
+        </properties>
+      </icontentdata>
+     
+      <!-- StartPage -->
+      <startpage>
+        <properties>
+          <logo>
+            <caption>Header Logo</caption>
+          </logo>
+          <utilitymenu>
+            <caption>Utility Menu</caption>
+          </utilitymenu>
+          <mainmenu>
+            <caption>Main Menu</caption>
+          </mainmenu>
+          <searchpage>
+            <caption>Search Page</caption>
+          </searchpage>
+          <socialmenu>
+            <caption>Social Menu</caption>
+          </socialmenu>
+        
+      </properties>
+      </startpage>
+     
+      <!-- ImageFile -->
+      <imagefile>
+        <properties>
+          <copyright>
+            <caption>Copyright</caption>
+          </copyright>
+        </properties>
+      </imagefile>
+      <!-- VideoFile -->
+      <videofile>
+        <properties>
+          <copyright>
+            <caption>Copyright</caption>
+          </copyright>
+          <previewimageurl>
+            <caption>Preview image</caption>
+          </previewimageurl>
+        </properties>
+      </videofile>
+    </contenttypes>
+  </language>
+</languages>

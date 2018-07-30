@@ -3,12 +3,11 @@ using System.ComponentModel.DataAnnotations;
 using EPiServer.Core;
 using EPiServer.DataAbstraction;
 using EPiServer.DataAnnotations;
-using EpiserverBaseSite.Models.Abstract;
 
 namespace EpiserverBaseSite.Models.Blocks
 {
-    [ContentType(DisplayName = "Callout", GUID = "fe080ddb-4fd6-4a45-93f0-b8596860a4d7", Description = "")]
-    public class CalloutBlock : BaseBlock
+    [ContentType(GUID = "581d632e-c22f-4767-84e5-dc201b70236b")]
+    public class HeroBlock : BlockData
     {
         [Display(GroupName = SystemTabNames.Content, Order = 10)]
         public virtual string Title { get; set; }

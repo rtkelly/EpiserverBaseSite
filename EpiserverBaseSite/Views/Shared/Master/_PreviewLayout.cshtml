@@ -1,11 +1,6 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
-
-@using EPiServer.Framework.Web
-@using EPiServer.Framework.Web.Mvc.Html
-
 
 <!DOCTYPE html>
 
@@ -16,9 +11,8 @@
 </head>
 <body>
     <div>
+        <h1>Preview Layout</h1>
         @RenderBody()
-
-        @Html.RequiredClientResources(RenderingTags.Footer)
     </div>
 </body>
 </html>

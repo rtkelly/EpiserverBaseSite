@@ -10,17 +10,14 @@ using EpiserverBaseSite.Models.ViewModels;
 
 namespace EpiserverBaseSite.Controllers.Page
 {
-    public class StartPageController : BasePageController<StartPage>
+    public class StartPageController : PageControllerBase<StartPage>
     {
         public ActionResult Index(StartPage currentPage)
         {
-            var viewModel = new StartPageViewModel()
-            {
-                CurrentPage = currentPage,
-                SiteSettings = Site.Service.Settings,
-            };
+            var viewModel = new StartPageViewModel(currentPage, Site.Service.Settings);
+            
+            
 
-         
             return View(viewModel);
         }
     }

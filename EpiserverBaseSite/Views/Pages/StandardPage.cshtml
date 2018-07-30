@@ -1,0 +1,12 @@
+﻿@using EpiserverBaseSite.Models.ViewModels
+@using EpiserverBaseSite.Models.Pages
+
+@model PageViewModel<StandardPage>
+
+
+@{
+    Layout = "~/Views/Shared/Master/_layout.cshtml";
+}
+
+@Html.PropertyFor(x => x.CurrentPage.MainBody)
+
